@@ -1,0 +1,115 @@
+/** @format */
+
+.task-manager {
+	padding: 20px;
+	background-color: #f4f4f4;
+	min-height: 100vh;
+	text-align: center;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.add-button {
+	background-color: #007bff;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.add-button:hover {
+	background-color: #0056b3;
+}
+
+.task-board {
+	background-color: #007bff;
+	padding: 50px;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+
+.task-column {
+	width: 300px;
+	background: white;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.task-card {
+	background: #e3f2fd;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.task-card:hover {
+	background: #bbdefb;
+}
+
+/* Modal Styling */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	width: 300px;
+	text-align: center;
+}
+
+.modal-content input,
+.modal-content select {
+	width: 100%;
+	padding: 8px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.modal-content button {
+	background-color: #28a745;
+	color: white;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.modal-content button:hover {
+	background-color: #218838;
+}
+
+.modal-content button:nth-child(2) {
+	background-color: #dc3545;
+}
+
+.modal-content button:nth-child(2):hover {
+	background-color: #c82333;
+}
