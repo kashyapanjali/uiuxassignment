@@ -1,256 +1,93 @@
-/** @format */
-
-.dashboard-container {
-	background-color: white;
-	padding: 24px;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.members-dashboard {
+	padding: 20px;
+	min-height: 100vh;
+	text-align: center;
+	background-color: #f4f4f4;
 }
 
-.dashboard-header {
+.title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 24px;
+	padding: 10px 20px;
+	margin-bottom: 20px;
 }
 
-.dashboard-header h1 {
-	font-size: 24px;
-	font-weight: 600;
-}
-
-.header-controls {
+.leftpart {
 	display: flex;
 	align-items: center;
-	gap: 16px;
+	gap: 10px;
 }
 
-.group-selector {
+.middlepart {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 5px;
 }
 
-.group-selector span {
-	color: #666;
-}
-
-.group-selector select {
-	padding: 6px 12px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	background-color: white;
-}
-
-.header-buttons {
+.rightpart {
 	display: flex;
-	gap: 8px;
+	align-items: center;
 }
 
-.icon-button {
-	padding: 8px;
+.menu-button, .zoom-button {
+	background: none;
 	border: none;
-	background: transparent;
+	font-size: 18px;
 	cursor: pointer;
-	border-radius: 4px;
 }
 
-.icon-button:hover {
-	background-color: #f0f0f0;
+select {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }
 
-.timeline-grid {
+.members-board {
 	display: grid;
-	grid-template-columns: auto repeat(10, 1fr);
-	gap: 16px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-header {
-	display: contents;
-}
-
-.empty-cell {
-	min-width: 150px;
-}
-
-.date-cell {
-	text-align: center;
-	color: #666;
-	font-size: 14px;
-}
-
-.member-row {
-	display: contents;
-}
-
-.member-info {
+.members-card {
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	color: #333;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 8px;
-	padding: 8px 0;
 }
 
-.member-avatar {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
+.members-card strong {
+	font-size: 18px;
+	margin-bottom: 5px;
 }
 
-.member-name {
+.members-card p {
 	font-size: 14px;
+	margin-bottom: 5px;
 }
 
-.task-cells {
-	display: contents;
-}
-
-.task-cell {
-	position: relative;
-	min-height: 40px;
-}
-
-.task-block {
-	position: absolute;
-	top: 4px;
-	left: 0;
-	height: calc(100% - 8px);
-	border-radius: 4px;
-	padding: 8px;
-	z-index: 10;
-}
-
-.task-content {
+.members-card small {
 	font-size: 12px;
-	font-weight: 500;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	color: #555;
 }
 
-/* Task Categories */
-.review {
-	background-color: #fef3c7;
-	color: #92400e;
-}
-
-.notification {
-	background-color: #ede9fe;
-	color: #5b21b6;
-}
-
-.feature {
-	background-color: #dcfce7;
-	color: #166534;
-}
-
-.specs {
-	background-color: #dbeafe;
-	color: #1e40af;
-}
-
-.optimization {
-	background-color: #dbeafe;
-	color: #1e40af;
-}
-
-.refactoring {
-	background-color: #dbeafe;
-	color: #1e40af;
-}
-
-.update {
-	background-color: #ede9fe;
-	color: #5b21b6;
-}
-
-.images {
-	background-color: #dcfce7;
-	color: #166534;
-}
-
-/* Hover States */
-.task-block:hover {
-	filter: brightness(0.95);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-	.dashboard-container {
-		padding: 16px;
-	}
-
-	.dashboard-header {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 16px;
-	}
-
-	.header-controls {
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.timeline-grid {
-		gap: 8px;
-	}
-
-	.empty-cell {
-		min-width: 100px;
-	}
-
-	.member-info {
-		padding: 4px 0;
-	}
-
-	.task-block {
-		padding: 4px;
-	}
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-	.dashboard-container {
-		color: white;
-	}
-
-	.group-selector select {
-		background-color: #2a2a2a;
-		border-color: #404040;
-		color: white;
-	}
-
-	.icon-button:hover {
-		background-color: #2a2a2a;
-	}
-
-	.date-cell {
-		color: #999;
-	}
-
-	/* Adjust task category colors for dark mode */
-	.review {
-		color: #fcd34d;
-	}
-
-	.notification {
-		color: #a78bfa;
-	}
-
-	.feature {
-		color: #4ade80;
-	}
-
-	.specs,
-	.optimization,
-	.refactoring {
-		color: #60a5fa;
-	}
-
-	.update {
-		color: #a78bfa;
-	}
-
-	.images {
-		color: #4ade80;
-	}
+input[type="text"] {
+	width: 50%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }

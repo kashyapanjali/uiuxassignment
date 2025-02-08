@@ -24,8 +24,6 @@ const Auth = ()=>{
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		// Basic validation
 		if (!email.includes("@")) {
 			setError("Please enter a valid email.");
 			return;
@@ -47,7 +45,6 @@ const Auth = ()=>{
 				setError("Email already exists. Please log in.");
 				return;
 			}
-			// Store the username and profileImage in localStorage
 			localStorage.setItem("username", username);
 			storeUserData(email, username, password); // Store user data
 			navigate("/dashboard");
@@ -62,6 +59,7 @@ const Auth = ()=>{
 			}
 		}
 	};
+
 	return (
 		<div className="auth-container">
 			<div className="auth-content">
@@ -122,5 +120,4 @@ const Auth = ()=>{
 		</div>
 	);
 }
-
 export default Auth;
